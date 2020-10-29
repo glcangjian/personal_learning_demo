@@ -1,0 +1,27 @@
+server:
+  port: 9002
+spring:
+  profiles:
+    active: dev
+  application:
+    name: feign-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  main:
+    allow-bean-definition-overriding: true
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 20000 #单位毫秒
+        readTimeout: 20000 #单位毫秒
+
+
+
+
